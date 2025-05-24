@@ -1,17 +1,26 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class TodaysDate {
+    // variables
+    String time;
+    public int day;
+    private int month;
+    protected int year;
+
+    // methods
+    public void printDateAndTime() {
+        GregorianCalendar calendar = new GregorianCalendar();
+        time = calendar.get(Calendar.HOUR_OF_DAY) + ":"
+                + calendar.get(Calendar.MINUTE) + ":"
+                + calendar.get(Calendar.SECOND);
+        day = calendar.get(Calendar.DATE);
+        month = calendar.get(Calendar.MONTH) + 1;
+        year = calendar.get(Calendar.YEAR);
+
+        System.out.println("Time: " + time);
+        System.out.println("Date: " + month + " " + day + " " + year);
     }
 }
